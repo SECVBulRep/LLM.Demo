@@ -2,6 +2,12 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.CreateKernel", "01.CreateKernel\01.CreateKernel.csproj", "{BF0AEC8B-1FAF-4C93-B868-409320FD2F25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.Kernel.Plugins", "02.Kernel.Plugins\02.Kernel.Plugins.csproj", "{2D08F72C-472A-417F-B5CA-A4CC602EE1E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Seedwork", "Seedwork", "{FE29CD9D-016F-4BFB-B69E-B1433B5186CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLM.Demo.SeedWork.Core", "LLM.Demo.SeedWork.Core\LLM.Demo.SeedWork.Core.csproj", "{3B707407-7212-4849-9C06-5A754091F839}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +18,16 @@ Global
 		{BF0AEC8B-1FAF-4C93-B868-409320FD2F25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF0AEC8B-1FAF-4C93-B868-409320FD2F25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF0AEC8B-1FAF-4C93-B868-409320FD2F25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D08F72C-472A-417F-B5CA-A4CC602EE1E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D08F72C-472A-417F-B5CA-A4CC602EE1E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D08F72C-472A-417F-B5CA-A4CC602EE1E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D08F72C-472A-417F-B5CA-A4CC602EE1E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B707407-7212-4849-9C06-5A754091F839}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B707407-7212-4849-9C06-5A754091F839}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B707407-7212-4849-9C06-5A754091F839}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B707407-7212-4849-9C06-5A754091F839}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3B707407-7212-4849-9C06-5A754091F839} = {FE29CD9D-016F-4BFB-B69E-B1433B5186CD}
 	EndGlobalSection
 EndGlobal

@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using LLM.Demo.SeedWork.Core;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.Connectors.OpenAI;
 
@@ -10,11 +11,7 @@ using Microsoft.SemanticKernel.Connectors.OpenAI;
 #pragma warning disable SKEXP0050
 #pragma warning disable SKEXP0052
 
-Kernel kernel = Kernel.CreateBuilder()
-    .AddOpenAIChatCompletion(
-        modelId: "phi-3.1-mini-128k-instruct", 
-        apiKey: null, 
-        endpoint: new Uri("http://localhost:1234/v1"))
+Kernel kernel = KernelHelper.CreateBuilder()
     .Build();
 
 while (true)

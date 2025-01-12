@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>net9.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <RootNamespace>_01.CreateKernel</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
@@ -10,6 +10,10 @@
 
     <ItemGroup>
       <PackageReference Include="Microsoft.SemanticKernel" Version="1.33.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\LLM.Demo.SeedWork.Core\LLM.Demo.SeedWork.Core.csproj" />
     </ItemGroup>
 
 </Project>
