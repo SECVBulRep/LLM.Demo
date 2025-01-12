@@ -8,6 +8,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Seedwork", "Seedwork", "{FE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLM.Demo.SeedWork.Core", "LLM.Demo.SeedWork.Core\LLM.Demo.SeedWork.Core.csproj", "{3B707407-7212-4849-9C06-5A754091F839}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.YamlPrompt", "03.YamlPrompt\03.YamlPrompt.csproj", "{7AF716C4-2D5A-42A3-ABFC-20DDA89DC9A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{3B707407-7212-4849-9C06-5A754091F839}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B707407-7212-4849-9C06-5A754091F839}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B707407-7212-4849-9C06-5A754091F839}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AF716C4-2D5A-42A3-ABFC-20DDA89DC9A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AF716C4-2D5A-42A3-ABFC-20DDA89DC9A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AF716C4-2D5A-42A3-ABFC-20DDA89DC9A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AF716C4-2D5A-42A3-ABFC-20DDA89DC9A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3B707407-7212-4849-9C06-5A754091F839} = {FE29CD9D-016F-4BFB-B69E-B1433B5186CD}
