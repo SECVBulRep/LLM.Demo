@@ -1,5 +1,9 @@
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.SemanticKernel;
+using Serilog;
+using Serilog.Sinks.SystemConsole.Themes;
+
 #pragma warning disable SKEXP0001
 #pragma warning disable SKEXP0003
 #pragma warning disable SKEXP0010
@@ -26,6 +30,15 @@ public static class KernelHelper
 
     public static IKernelBuilder AddKernelAndAddOpenAIChatCompletion(this ServiceCollection collection)
     {
+        var serilog = new LoggerConfiguration()
+            .MinimumLevel.Debug()
+            .Enrich.FromLogContext()
+            .WriteTo.Console(theme: AnsiConsoleTheme.Code)
+            .CreateLogger();
+        var loggerFactory = new LoggerFactory().AddSerilog(serilog);
+        
+        collection.AddSingleton<ILoggerFactory>(loggerFactory);
+        
         var kernel = collection.AddKernel();
         collection.AddOpenAIChatCompletion(
             modelId: Model,

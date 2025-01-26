@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.YamlPrompt", "03.YamlPro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.DependencyInjection", "04.DependencyInjection\04.DependencyInjection.csproj", "{44CEE5E3-0647-4773-A7CC-FA9A50523A55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.PromptFilter", "05.PromptFilter\05.PromptFilter.csproj", "{9D09CE6A-2A0F-455D-8081-B1A09D59D9DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{44CEE5E3-0647-4773-A7CC-FA9A50523A55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44CEE5E3-0647-4773-A7CC-FA9A50523A55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44CEE5E3-0647-4773-A7CC-FA9A50523A55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D09CE6A-2A0F-455D-8081-B1A09D59D9DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D09CE6A-2A0F-455D-8081-B1A09D59D9DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D09CE6A-2A0F-455D-8081-B1A09D59D9DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D09CE6A-2A0F-455D-8081-B1A09D59D9DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3B707407-7212-4849-9C06-5A754091F839} = {FE29CD9D-016F-4BFB-B69E-B1433B5186CD}
