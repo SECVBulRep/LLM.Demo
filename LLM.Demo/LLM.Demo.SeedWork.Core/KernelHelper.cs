@@ -1,3 +1,4 @@
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.SemanticKernel;
 #pragma warning disable SKEXP0001
 #pragma warning disable SKEXP0003
@@ -7,15 +8,30 @@ using Microsoft.SemanticKernel;
 #pragma warning disable SKEXP0052
 namespace LLM.Demo.SeedWork.Core;
 
-public class KernelHelper
+public static class KernelHelper
 {
+    const string Model = "phi-4";
+    private const string Endpoint = "http://localhost:1234/v1";
+    
     public static IKernelBuilder CreateBuilder()
     {
         
         return Kernel.CreateBuilder()
             .AddOpenAIChatCompletion(
-                modelId: "phi-4",
+                modelId: Model,
                 apiKey: null,
-                endpoint: new Uri("http://localhost:1234/v1"));
+                endpoint: new Uri(Endpoint));
+    }
+
+
+    public static IKernelBuilder AddKernelAndAddOpenAIChatCompletion(this ServiceCollection collection)
+    {
+        var kernel = collection.AddKernel();
+        collection.AddOpenAIChatCompletion(
+            modelId: Model,
+            apiKey: null,
+            endpoint: new Uri(Endpoint));
+        
+        return kernel;
     }
 }

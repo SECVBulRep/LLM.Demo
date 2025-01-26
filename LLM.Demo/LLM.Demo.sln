@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLM.Demo.SeedWork.Core", "L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.YamlPrompt", "03.YamlPrompt\03.YamlPrompt.csproj", "{7AF716C4-2D5A-42A3-ABFC-20DDA89DC9A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.DependencyInjection", "04.DependencyInjection\04.DependencyInjection.csproj", "{44CEE5E3-0647-4773-A7CC-FA9A50523A55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{7AF716C4-2D5A-42A3-ABFC-20DDA89DC9A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AF716C4-2D5A-42A3-ABFC-20DDA89DC9A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AF716C4-2D5A-42A3-ABFC-20DDA89DC9A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44CEE5E3-0647-4773-A7CC-FA9A50523A55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44CEE5E3-0647-4773-A7CC-FA9A50523A55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44CEE5E3-0647-4773-A7CC-FA9A50523A55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44CEE5E3-0647-4773-A7CC-FA9A50523A55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3B707407-7212-4849-9C06-5A754091F839} = {FE29CD9D-016F-4BFB-B69E-B1433B5186CD}
