@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.DependencyInjection", "0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.PromptFilter", "05.PromptFilter\05.PromptFilter.csproj", "{9D09CE6A-2A0F-455D-8081-B1A09D59D9DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.Observality", "06.Observality\06.Observality.csproj", "{C22E9DBB-D689-494F-A616-918293B086AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{9D09CE6A-2A0F-455D-8081-B1A09D59D9DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D09CE6A-2A0F-455D-8081-B1A09D59D9DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D09CE6A-2A0F-455D-8081-B1A09D59D9DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C22E9DBB-D689-494F-A616-918293B086AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C22E9DBB-D689-494F-A616-918293B086AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C22E9DBB-D689-494F-A616-918293B086AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C22E9DBB-D689-494F-A616-918293B086AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3B707407-7212-4849-9C06-5A754091F839} = {FE29CD9D-016F-4BFB-B69E-B1433B5186CD}

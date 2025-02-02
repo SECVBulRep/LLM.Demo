@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using System.ComponentModel;
 using LLM.Demo.SeedWork.Core;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -23,8 +24,18 @@ ServiceProvider BuildServiceProvider()
     var collection = new ServiceCollection();
     collection.AddSingleton<IPromptRenderFilter, PromptFilter>();
     var kernelBuilder = collection.AddKernelAndAddOpenAIChatCompletion();
+    kernelBuilder.Plugins.AddFromType<TimeInformation>();
     return collection.BuildServiceProvider();
 }
+
+
+sealed class TimeInformation
+{
+    [KernelFunction]
+    [Description("Retrieves the current time in UTC.")]
+    public string GetCurrentUtcTime() => DateTime.UtcNow.ToString("R");
+}
+
 
 sealed class PromptFilter : IPromptRenderFilter
 {
