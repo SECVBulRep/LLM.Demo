@@ -22,8 +22,6 @@ ServiceProvider BuildServiceProvider()
     var kernelBuilder = collection.AddKernelAndAddOpenAIChatCompletion();
     kernelBuilder.Plugins.AddFromType<TimeInformation>();
     kernelBuilder.Services.AddSingleton<IFunctionInvocationFilter, MyFunctionFilter>();
-   
-    
     return collection.BuildServiceProvider();
 }
 

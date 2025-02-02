@@ -14,7 +14,7 @@ namespace LLM.Demo.SeedWork.Core;
 
 public static class KernelHelper
 {
-    const string Model = "lmstudio-community/Phi-3.1-mini-128k-instruct-GGUF";
+    const string Model = "phi-4";
     private const string Endpoint = "http://localhost:1234/v1";
     
     public static IKernelBuilder CreateBuilder()
