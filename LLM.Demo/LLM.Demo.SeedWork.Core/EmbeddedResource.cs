@@ -34,21 +34,26 @@ public static class EmbeddedResource
         return reader.ReadToEnd();
     }
 
-    internal static Stream? ReadStream(string fileName)
+    public static Stream? ReadStream(string fileName, Assembly assembly)
     {
+
+        //var assembly = Assembly.GetExecutingAssembly();
         // Get the current assembly. Note: this class is in the same assembly where the embedded resources are stored.
-        Assembly assembly =
-            typeof(EmbeddedResource).GetTypeInfo().Assembly ??
-            throw new ConfigurationNotFoundException($"[{s_namespace}] {fileName} assembly not found");
+        // Assembly assembly =
+        //     typeof(EmbeddedResource).GetTypeInfo().Assembly ??
+        //     throw new ConfigurationNotFoundException($"[{s_namespace}] {fileName} assembly not found");
 
         // Resources are mapped like types, using the namespace and appending "." (dot) and the file name
-        var resourceName = $"{s_namespace}." + fileName;
-        return assembly.GetManifestResourceStream(resourceName);
+        //var resourceName = $"{s_namespace}." + fileName;
+        //var resourceName = $"_{assembly.GetName().Name}." + fileName;
+
+        //var t = assembly.GetManifestResourceNames();
+        return assembly.GetManifestResourceStream(assembly.GetManifestResourceNames().Where(n => n.EndsWith(fileName)).FirstOrDefault());
     }
 
-    internal static async Task<ReadOnlyMemory<byte>> ReadAllAsync(string fileName)
+    internal static async Task<ReadOnlyMemory<byte>> ReadAllAsync(string fileName, Assembly assembly)
     {
-        await using Stream? resourceStream = ReadStream(fileName);
+        await using Stream? resourceStream = ReadStream(fileName,assembly);
         using var memoryStream = new MemoryStream();
 
         // Copy the resource stream to the memory stream

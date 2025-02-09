@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.Observality", "06.Observ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07.Pipelining", "07.Pipelining\07.Pipelining.csproj", "{655F573B-A300-45C6-B538-DC70412A0C0D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08.OpenApi_Plugins", "08.OpenApi_Plugins\08.OpenApi_Plugins.csproj", "{62C9CC71-9832-4B5A-AACA-1D61000E3BBD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{655F573B-A300-45C6-B538-DC70412A0C0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{655F573B-A300-45C6-B538-DC70412A0C0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{655F573B-A300-45C6-B538-DC70412A0C0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62C9CC71-9832-4B5A-AACA-1D61000E3BBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62C9CC71-9832-4B5A-AACA-1D61000E3BBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62C9CC71-9832-4B5A-AACA-1D61000E3BBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62C9CC71-9832-4B5A-AACA-1D61000E3BBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3B707407-7212-4849-9C06-5A754091F839} = {FE29CD9D-016F-4BFB-B69E-B1433B5186CD}
