@@ -34,6 +34,15 @@ public static class EmbeddedResource
         return reader.ReadToEnd();
     }
 
+    
+    public static string Read2(string fileName,Assembly assembly)
+    {
+        using Stream resource = assembly.GetManifestResourceStream(assembly.GetManifestResourceNames().Where(n => n.EndsWith(fileName)).FirstOrDefault());
+        using var reader = new StreamReader(resource);
+        return reader.ReadToEnd();
+    }
+    
+    
     public static Stream? ReadStream(string fileName, Assembly assembly)
     {
 
