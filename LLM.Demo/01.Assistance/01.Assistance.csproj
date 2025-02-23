@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>_01.Assistance</RootNamespace>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="Resources\generateStory.yaml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\LLM.Demo.SeedWork.Core\LLM.Demo.SeedWork.Core.csproj" />
+    </ItemGroup>
+
+</Project>
