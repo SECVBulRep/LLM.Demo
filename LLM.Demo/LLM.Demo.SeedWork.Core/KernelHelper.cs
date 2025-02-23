@@ -47,4 +47,11 @@ public static class KernelHelper
         
         return kernel;
     }
+    
+    public static Kernel BuildKernelAndServiceProvider()
+    {
+        var collection = new ServiceCollection();
+        var kernelBuilder = collection.AddKernelAndAddOpenAIChatCompletion();
+        return collection.BuildServiceProvider().GetRequiredService<Kernel>();
+    }
 }

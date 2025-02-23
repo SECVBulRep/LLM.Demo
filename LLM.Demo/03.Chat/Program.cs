@@ -12,7 +12,7 @@ using Microsoft.SemanticKernel.ChatCompletion;
 const string ReviewerName = "ArtDirector";
 const string ReviewerInstructions =
     """
-    You are an art director who has opinions about copywriting born of a love for David Ogilvy.
+    You are an art director who has opinions about copywriting born of a love for Leonardo da Vinci.
     The goal is to determine if the given copy is acceptable to print.
     If so, state that it is approved.
     If not, provide insight on how to refine suggested copy without example.
@@ -80,7 +80,7 @@ async Task UseAgentGroupChatWithTwoAgentsAsync()
         };
  
     
-    ChatMessageContent input = new(AuthorRole.User, "concept: maps made out of egg cartons.");
+    ChatMessageContent input = new(AuthorRole.User, "concept: The bird is flying towards the sea..");
     chat.AddChatMessage(input);
     AgentHelper.WriteAgentChatMessage(input);
 
@@ -101,7 +101,9 @@ ServiceProvider BuildServiceProvider()
 
 class ApprovalTerminationStrategy : TerminationStrategy
 {
-    // Terminate when the final message contains the term "approve"
     protected override Task<bool> ShouldAgentTerminateAsync(Agent agent, IReadOnlyList<ChatMessageContent> history, CancellationToken cancellationToken)
-        => Task.FromResult(history[history.Count - 1].Content?.Contains("approve", StringComparison.OrdinalIgnoreCase) ?? false);
+    {
+        return Task.FromResult(history[history.Count - 1].Content
+            ?.Contains("approve", StringComparison.OrdinalIgnoreCase) ?? false);
+    }
 }
