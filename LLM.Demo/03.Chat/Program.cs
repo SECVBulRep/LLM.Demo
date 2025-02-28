@@ -80,7 +80,7 @@ async Task UseAgentGroupChatWithTwoAgentsAsync()
         };
  
     
-    ChatMessageContent input = new(AuthorRole.User, "concept: The bird is flying towards the sea..");
+    ChatMessageContent input = new(AuthorRole.User, "The bird is flying towards the sea");
     chat.AddChatMessage(input);
     AgentHelper.WriteAgentChatMessage(input);
 
@@ -104,6 +104,6 @@ class ApprovalTerminationStrategy : TerminationStrategy
     protected override Task<bool> ShouldAgentTerminateAsync(Agent agent, IReadOnlyList<ChatMessageContent> history, CancellationToken cancellationToken)
     {
         return Task.FromResult(history[history.Count - 1].Content
-            ?.Contains("approve", StringComparison.OrdinalIgnoreCase) ?? false);
+            ?.Contains("approv", StringComparison.OrdinalIgnoreCase) ?? false);
     }
 }
