@@ -16,8 +16,13 @@ namespace LLM.Demo.SeedWork.Core;
 
 public static class KernelHelper
 {
-    const string Model = "NousResearch/Hermes-3-Llama-3.1-8B";
-    private const string Endpoint = "http://lomonosov-mini:8000/v1";
+    // const string Model = "NousResearch/Hermes-3-Llama-3.1-8B";
+    // private const string Endpoint = "http://lomonosov-mini:8000/v1";
+    
+    
+    const string Model = "phi-4";
+    private const string Endpoint = "http://localhost:1234/v1";
+    
 
     public static IKernelBuilder CreateBuilder()
     {
