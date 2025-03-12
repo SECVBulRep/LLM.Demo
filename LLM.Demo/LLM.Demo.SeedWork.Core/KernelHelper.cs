@@ -16,13 +16,41 @@ namespace LLM.Demo.SeedWork.Core;
 
 public static class KernelHelper
 {
-    // const string Model = "NousResearch/Hermes-3-Llama-3.1-8B";
-    // private const string Endpoint = "http://lomonosov-mini:8000/v1";
+    const string Model = "NousResearch/Hermes-3-Llama-3.1-8B";
+    const string ModelWithAddOpenAITextEmbeddingGeneration = "BAAI/bge-m3";
+    private const string Endpoint = "http://lomonosov-mini:8000/v1";
     
     
-    const string Model = "phi-4";
-    private const string Endpoint = "http://localhost:1234/v1";
     
+    
+    
+    // const string Model = "phi-4";
+    // private const string Endpoint = "http://localhost:1234/v1";
+    
+
+    // public static IKernelBuilder CreateBuilder()
+    // {
+    //     return Kernel.CreateBuilder()
+    //         .AddOpenAIChatCompletion(
+    //             modelId: Model,
+    //             apiKey: null,
+    //             endpoint: new Uri(Endpoint));
+    //
+    // }
+
+    public static IKernelBuilder CreateBuilderWithAddOpenAiTextEmbeddingGeneration()
+    {
+        var httpClient = new HttpClient { BaseAddress = new Uri(Endpoint) };
+
+
+        var kernel = Kernel.CreateBuilder()
+            .AddOpenAITextEmbeddingGeneration(
+                modelId: ModelWithAddOpenAITextEmbeddingGeneration, // Модель должна поддерживать embeddings
+                apiKey: "123", // API-ключ не нужен для локального vLLM
+                httpClient: httpClient);
+
+        return kernel;
+    }
 
     public static IKernelBuilder CreateBuilder()
     {
@@ -31,8 +59,13 @@ public static class KernelHelper
                 modelId: Model,
                 apiKey: null,
                 endpoint: new Uri(Endpoint));
+        // .AddOpenAITextEmbeddingGeneration(
+        //     modelId: Model,  // Должна быть модель с поддержкой эмбеддингов
+        //     apiKey: null,
+        //     endpoint: new Uri(Endpoint));
     }
 
+    
 
     [Experimental("SKEXP0070")]
     public static IKernelBuilder CreateBuilderHuggingFace()
