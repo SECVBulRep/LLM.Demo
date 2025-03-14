@@ -6,7 +6,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.VectorData;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.Connectors.InMemory;
+using Microsoft.SemanticKernel.Connectors.Redis;
 using Microsoft.SemanticKernel.Embeddings;
+using StackExchange.Redis;
+
 #pragma warning disable SKEXP0001
 
 
@@ -65,21 +68,21 @@ static async Task<VectorSearchResult<Glossary>> SearchVectorStoreAsync(IVectorSt
 {
     var collection = await GetVectorStoreCollectionWithDataAsync();
 
-    // Generate an embedding from the search string.
+    
     var searchString = "How do I provide additional context to an LLM?";
     var searchVector = await textEmbeddingGenerationService.GenerateEmbeddingAsync(searchString);
 
-    // Search the store with a filter and get the single most relevant result.
+   
     var searchResult = await collection.VectorizedSearchAsync(
-        searchVector,
-        new()
-        {
-            Top = 1,
-            Filter = new VectorSearchFilter().EqualTo(nameof(Glossary.Category), "AI")
-        });
+            searchVector,
+            new()
+            {
+                Top = 1,
+                Filter = g => g.Category == "AI"
+            });
     var searchResultItems = await searchResult.Results.ToListAsync();
 
-    // Write the search result with its score to the console.
+   
     Console.WriteLine(searchResultItems.First().Record.Definition);
     Console.WriteLine(searchResultItems.First().Score);
 }
@@ -96,3 +99,19 @@ async Task<IVectorStoreRecordCollection<string, Glossary>> GetVectorStoreCollect
 
     return collection;
 }
+
+
+// async Task<IVectorStoreRecordCollection<string, Glossary>> GetVectorStoreCollectionWithDataFromRedisAsync()
+// {
+//     
+//     var vectorStore = new RedisVectorStore(ConnectionMultiplexer.Connect("172.16.42.151,172.16.42.152,allowAdmin=true,name=payouts-dev,abortConnect=false,syncTimeout=3000,defaultDatabase=3").GetDatabase());
+//     
+//     // Construct the vector store and get the collection.
+//    // var vectorStore = new InMemoryVectorStore();
+//     var collection = vectorStore.GetCollection<string, Glossary>("skglossary");
+//
+//     // Ingest data into the collection using the code from step 1.
+//     await VectorDataHelper.IngestDataIntoVectorStoreAsync(collection, textEmbeddingGenerationService);
+//
+//     return collection;
+// }

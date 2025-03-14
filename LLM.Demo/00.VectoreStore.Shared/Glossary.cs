@@ -18,7 +18,7 @@ public sealed class Glossary
     [VectorStoreRecordData]
     public string Definition { get; set; }
 
-    [VectorStoreRecordVector(Dimensions: 1536)]
+    [VectorStoreRecordVector(Dimensions: 1024)]
     public ReadOnlyMemory<float> DefinitionEmbedding { get; set; }
 }
 
@@ -44,8 +44,8 @@ public static class VectorDataHelper
         var upsertedKeysTasks = glossaryEntries.Select(x => collection.UpsertAsync(x));
         return await Task.WhenAll(upsertedKeysTasks);
     }
-    
-    private static IEnumerable<Glossary> CreateGlossaryEntries()
+
+    public static IEnumerable<Glossary> CreateGlossaryEntries()
     {
         yield return new Glossary
         {

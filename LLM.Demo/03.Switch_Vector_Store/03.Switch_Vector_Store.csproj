@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>_03.Switch_Vector_Store</RootNamespace>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\00.VectoreStore.Shared\00.VectoreStore.Shared.csproj" />
+      <ProjectReference Include="..\LLM.Demo.SeedWork.Core\LLM.Demo.SeedWork.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.0-preview.1.25081.1" />
+      <PackageReference Include="Microsoft.SemanticKernel.Connectors.Postgres" Version="1.41.0-alpha" />
+      <PackageReference Include="Microsoft.SemanticKernel.Connectors.Redis" Version="1.41.0-preview" />
+      <PackageReference Include="Microsoft.SemanticKernel.Connectors.Sqlite" Version="1.41.0-preview" />
+    </ItemGroup>
+
+</Project>
